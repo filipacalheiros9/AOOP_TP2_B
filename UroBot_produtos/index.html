@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaBot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="hero-tag">Assistente inteligente de moda</p>
+            <h1>ModaBot</h1>
+            <p class="hero-subtitle">Descobre pecas por preco, cor e estilo em segundos.</p>
+        </div>
+    </header>
+
+    <main id="chat">
+        <section class="barra-pesquisa">
+            <input type="text" id="input" placeholder="Ex: tops ate 20EUR">
+            <button id="btn-enviar" onclick="enviar()">Pesquisar</button>
+        </section>
+
+        <section class="resposta-wrap">
+            <h2>Resposta</h2>
+            <div id="resposta">Escreve uma pergunta para comecar.</div>
+        </section>
+
+        <section>
+            <h2 class="produtos-titulo">Sugestoes</h2>
+            <div class="produtos" id="produtos"></div>
+        </section>
+    </main>
+
+    <footer>
+        <small>ModaBot</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

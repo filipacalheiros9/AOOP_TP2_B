@@ -1,0 +1,240 @@
+﻿:root {
+    --bg: #f7f9fc;
+    --bg-soft: #eef4ff;
+    --surface: #ffffff;
+    --surface-2: #fdfdff;
+    --text: #1b2330;
+    --muted: #5f6f86;
+    --brand: #0f766e;
+    --brand-strong: #0b5f59;
+    --accent: #ef6c57;
+    --border: #dbe4f0;
+    --shadow: 0 18px 45px rgba(15, 35, 60, 0.12);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background:
+        radial-gradient(1200px 500px at -5% -10%, #d2e7ff 0%, transparent 60%),
+        radial-gradient(900px 500px at 105% 0%, #ffd9ce 0%, transparent 65%),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+    color: var(--text);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.hero {
+    padding: 48px 20px 24px;
+}
+
+.hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    margin: 0 0 8px;
+    color: var(--brand-strong);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 56px);
+    line-height: 1;
+}
+
+.hero-subtitle {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+#chat {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+.barra-pesquisa {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #8cb8ff;
+    box-shadow: 0 0 0 3px rgba(140, 184, 255, 0.25);
+}
+
+button {
+    padding: 13px 20px;
+    min-width: 140px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--brand), #14857b);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(15, 118, 110, 0.25);
+    filter: saturate(1.05);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+}
+
+.resposta-wrap {
+    margin-bottom: 26px;
+}
+
+#resposta {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    line-height: 1.55;
+    color: #243248;
+    white-space: pre-line;
+}
+
+.produtos-titulo {
+    margin-bottom: 14px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+.produto {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(28, 40, 64, 0.08);
+    transform: translateY(6px);
+    opacity: 0;
+    animation: rise 0.35s ease forwards;
+}
+
+.produto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #eef3fa;
+}
+
+.produto h3 {
+    margin: 8px 0;
+    font-size: 18px;
+    min-height: 46px;
+}
+
+.produto p {
+    margin: 4px 0 0;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 20px;
+}
+
+.produto a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--brand-strong);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.produto a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: #66768f;
+    padding: 16px 12px 28px;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 30px 16px 14px;
+    }
+
+    #chat {
+        margin: 0 12px;
+        padding: 16px;
+    }
+
+    .barra-pesquisa {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .produto img {
+        height: 220px;
+    }
+}
